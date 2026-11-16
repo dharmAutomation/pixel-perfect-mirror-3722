@@ -14,8 +14,8 @@ import { CheckList, PageHero } from "@/components/site/sections";
 import { Field, FormCard, NativeSelect, SuccessPanel, inputCls } from "@/components/site/form-fields";
 
 export const Route = createFileRoute("/start-project")({
-  validateSearch: (search: Record<string, unknown>): { service?: string } => ({
-    service: typeof search.service === "string" ? search.service : undefined,
+  validateSearch: (search: Record<string, unknown>): { service?: string | undefined } => ({
+    service: typeof search["service"] === "string" ? search["service"] : undefined,
   }),
   head: () => ({
     meta: [

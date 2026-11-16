@@ -24,8 +24,8 @@ import { PageHero } from "@/components/site/sections";
 import { Field, FormCard, NativeSelect, SuccessPanel, inputCls } from "@/components/site/form-fields";
 
 export const Route = createFileRoute("/apply")({
-  validateSearch: (search: Record<string, unknown>): { course?: string } => ({
-    course: typeof search.course === "string" ? search.course : undefined,
+  validateSearch: (search: Record<string, unknown>): { course?: string | undefined } => ({
+    course: typeof search["course"] === "string" ? search["course"] : undefined,
   }),
   head: () => ({
     meta: [

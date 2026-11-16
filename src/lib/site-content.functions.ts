@@ -43,7 +43,7 @@ export const getSiteContent = createServerFn({ method: "GET" }).handler(async ()
   const media: Record<string, string> = {};
   if (paths.size > 0) {
     const { data } = await supabase.storage.from("media").createSignedUrls([...paths], SIGNED_URL_TTL);
-    const publicBase = (import.meta.env.VITE_SUPABASE_URL as string | undefined)?.replace(/\/+$/, "");
+    const publicBase = (import.meta.env["VITE_SUPABASE_URL"] as string | undefined)?.replace(/\/+$/, "");
     data?.forEach((d) => {
       if (!d.path || !d.signedUrl) return;
       let signed = d.signedUrl;

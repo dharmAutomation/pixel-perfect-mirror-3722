@@ -50,7 +50,6 @@ export function Footer() {
       <div className="border-t border-navy-border">
         <div className="container-page flex flex-col items-center justify-between gap-3 py-6 text-xs text-navy-muted sm:flex-row">
           <p>© {new Date().getFullYear()} ZEBRYL. All rights reserved.</p>
-          <Link to="/auth" className={linkCls}>Admin login</Link>
         </div>
       </div>
     </footer>
